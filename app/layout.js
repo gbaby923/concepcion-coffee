@@ -1,18 +1,18 @@
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Fraunces, DM_Sans } from 'next/font/google'
 import { CartProvider } from '@/context/CartContext'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/layout/CartDrawer'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
 })
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5F0E8' }}>
         <CartProvider>
           <Header />

@@ -63,19 +63,47 @@ body {
 }
 
 .region-card-hover {
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .region-card-hover:hover {
-  transform: translateY(-4px);
-}
-
-.region-card-hover:hover .region-card-img {
-  transform: scale(1.04);
+  transform: translateY(-6px);
 }
 
 .region-card-img {
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.region-card-hover:hover .region-card-img {
+  transform: scale(1.08);
+}
+
+.region-card-overlay {
+  background: linear-gradient(to top, rgba(28,16,8,0.88) 0%, rgba(28,16,8,0.22) 60%, transparent 100%);
+  transition: background 0.4s ease;
+}
+
+.region-card-hover:hover .region-card-overlay {
+  background: linear-gradient(to top, rgba(28,16,8,0.97) 0%, rgba(28,16,8,0.6) 65%, rgba(28,16,8,0.2) 100%);
+}
+
+.region-card-info {
+  transition: transform 0.35s ease;
+}
+
+.region-card-hover:hover .region-card-info {
+  transform: translateY(-8px);
+}
+
+.region-card-cta {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.3s ease 0.08s, transform 0.35s ease 0.08s;
+}
+
+.region-card-hover:hover .region-card-cta {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cart-drawer {
@@ -129,6 +157,14 @@ body {
 
 .mobile-menu.open {
   max-height: 500px;
+}
+
+/* Hero phrase cycling */
+@keyframes phraseFlash {
+  0%   { opacity: 0; transform: translateY(8px); }
+  18%  { opacity: 1; transform: translateY(0); }
+  78%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
 }
 
 /* Hero animations */

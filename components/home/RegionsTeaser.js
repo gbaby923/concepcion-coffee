@@ -35,7 +35,6 @@ export default function RegionsTeaser() {
     <section id="regions" className="py-24 lg:py-32" style={{ backgroundColor: '#FDFAF4' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-xs tracking-[0.3em] uppercase mb-4 font-medium" style={{ color: '#6B4C2A' }}>
             Origin
@@ -52,7 +51,6 @@ export default function RegionsTeaser() {
           </p>
         </div>
 
-        {/* Region cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {regions.map((region) => (
             <Link
@@ -61,12 +59,11 @@ export default function RegionsTeaser() {
               className="region-card-hover group block overflow-hidden"
               aria-label={`Explore ${region.name} region`}
             >
-              {/* Image area */}
               <div
                 className="relative overflow-hidden"
                 style={{ aspectRatio: '3/4', backgroundColor: region.bgColor }}
               >
-                {/* Background image — swap src when region landscape photos are ready */}
+                {/* Background image */}
                 <div
                   className="region-card-img absolute inset-0 bg-cover bg-center"
                   style={{
@@ -75,38 +72,44 @@ export default function RegionsTeaser() {
                   }}
                 />
 
-                {/* Gradient overlay */}
-                <div
-                  className="region-card-overlay absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(28,16,8,0.88) 0%, rgba(28,16,8,0.2) 60%, transparent 100%)' }}
-                />
+                {/* Gradient overlay — darkens more on hover via CSS */}
+                <div className="region-card-overlay absolute inset-0" />
 
-                {/* Content overlay */}
+                {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <p
-                    className="text-[10px] tracking-[0.3em] uppercase mb-2"
-                    style={{ color: 'rgba(245,240,232,0.55)' }}
-                  >
-                    Region {region.num}
-                  </p>
-                  <h3
-                    className="text-2xl font-semibold leading-tight mb-3"
-                    style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}
-                  >
-                    {region.name}
-                  </h3>
-                  <p className="text-xs mb-1" style={{ color: 'rgba(245,240,232,0.6)' }}>
-                    {region.altitude}
-                  </p>
-                  <p
-                    className="text-sm italic mb-4"
-                    style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(245,240,232,0.75)' }}
-                  >
-                    {region.flavor}
-                  </p>
-                  <div className="flex items-center gap-2 text-xs font-semibold tracking-wide group-hover:gap-3 transition-all duration-200" style={{ color: '#F5F0E8' }}>
-                    Explore Region
-                    <span>→</span>
+                  <div className="region-card-info">
+                    <p
+                      className="text-[10px] tracking-[0.3em] uppercase mb-2"
+                      style={{ color: 'rgba(245,240,232,0.55)' }}
+                    >
+                      Region {region.num}
+                    </p>
+                    <h3
+                      className="text-2xl font-semibold leading-tight mb-3"
+                      style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}
+                    >
+                      {region.name}
+                    </h3>
+                    <p className="text-xs mb-1" style={{ color: 'rgba(245,240,232,0.6)' }}>
+                      {region.altitude}
+                    </p>
+                    <p
+                      className="text-sm italic"
+                      style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(245,240,232,0.75)' }}
+                    >
+                      {region.flavor}
+                    </p>
+                  </div>
+
+                  {/* CTA — slides up on hover */}
+                  <div className="region-card-cta mt-5">
+                    <span
+                      className="inline-flex items-center gap-3 px-5 py-2.5 text-xs font-bold tracking-[0.15em] uppercase"
+                      style={{ border: '1px solid rgba(245,240,232,0.55)', color: '#F5F0E8' }}
+                    >
+                      Explore Region
+                      <span style={{ fontSize: '0.75rem' }}>→</span>
+                    </span>
                   </div>
                 </div>
               </div>

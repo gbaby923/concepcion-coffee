@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <RegionsTeaser />
       <WhyAltitude />
       <OriginStory />
-      <RegionsTeaser />
       <ProductSection />
       <ProcessSection />
       <SubscriptionSection />
