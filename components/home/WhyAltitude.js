@@ -42,45 +42,55 @@ const pillars = [
 
 export default function WhyAltitude() {
   return (
-    <section id="coffee" style={{ backgroundColor: '#F5F0E8' }}>
+    <section id="coffee">
 
-      {/* Full-width coffee beans image — editorial break */}
+      {/* Mountain Range hero header — background covers only this block */}
       <div
-        className="relative w-full overflow-hidden"
-        style={{ height: '52vh', maxHeight: '520px', minHeight: '300px' }}
-        aria-hidden="true"
+        className="relative overflow-hidden flex items-center justify-center"
+        style={{ height: '62vh', maxHeight: '620px', minHeight: '380px' }}
       >
+        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/Mountain%20Range.avif')" }}
+          aria-hidden="true"
         />
-        {/* Fade to cream at the bottom */}
+
+        {/* Dark overlay for text contrast */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, transparent 40%, #F5F0E8 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(10,8,5,0.35) 0%, rgba(10,8,5,0.6) 70%, rgba(10,8,5,0.75) 100%)' }}
+          aria-hidden="true"
         />
-      </div>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
-        {/* Header */}
-        <div className="max-w-2xl mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase mb-4 font-medium" style={{ color: '#6B4C2A' }}>
+        {/* Fade bottom edge into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0"
+          style={{ height: '35%', background: 'linear-gradient(to bottom, transparent, #F5F0E8)' }}
+          aria-hidden="true"
+        />
+
+        {/* Centered headline */}
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <p
+            className="text-xs tracking-[0.3em] uppercase mb-5 font-medium"
+            style={{ color: 'rgba(245,240,232,0.55)' }}
+          >
             The Science of the Highlands
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-semibold leading-tight"
-            style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight"
+            style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}
           >
             Higher up.
-            <br />
-            Slower grown.
-            <br />
-            Better coffee.
+            <br />Slower grown.
+            <br />Better coffee.
           </h2>
         </div>
+      </div>
 
-        {/* Three columns */}
+      {/* Three pillars — cream background */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32" style={{ backgroundColor: '#F5F0E8' }}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {pillars.map((pillar) => (
             <div
