@@ -52,7 +52,7 @@ export default function WhyAltitude() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/Red%20Coffee%20beans.avif')" }}
+          style={{ backgroundImage: "url('/images/Mountain%20Range.avif')" }}
         />
         {/* Fade to cream at the bottom */}
         <div
