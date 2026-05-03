@@ -42,8 +42,27 @@ const pillars = [
 
 export default function WhyAltitude() {
   return (
-    <section id="coffee" className="py-24 lg:py-32" style={{ backgroundColor: '#F5F0E8' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="coffee" style={{ backgroundColor: '#F5F0E8' }}>
+
+      {/* Full-width coffee beans image — editorial break */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: '52vh', maxHeight: '520px', minHeight: '300px' }}
+        aria-hidden="true"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/Red%20Coffee%20beans.avif')" }}
+        />
+        {/* Fade to cream at the bottom */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, transparent 40%, #F5F0E8 100%)' }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <p className="text-xs tracking-[0.3em] uppercase mb-4 font-medium" style={{ color: '#6B4C2A' }}>
@@ -63,16 +82,13 @@ export default function WhyAltitude() {
 
         {/* Three columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {pillars.map((pillar, i) => (
+          {pillars.map((pillar) => (
             <div
               key={pillar.label}
               className="group"
               style={{ borderTop: '1px solid #E8E0D4', paddingTop: '2rem' }}
             >
-              <div
-                className="mb-6 transition-colors duration-300"
-                style={{ color: '#6B4C2A' }}
-              >
+              <div className="mb-6" style={{ color: '#6B4C2A' }}>
                 {pillar.icon}
               </div>
               <p className="text-[11px] tracking-[0.2em] uppercase mb-2" style={{ color: '#6B4C2A', opacity: 0.7 }}>

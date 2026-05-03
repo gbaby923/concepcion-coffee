@@ -10,29 +10,30 @@ const stats = [
 export default function OriginStory() {
   return (
     <section id="story" className="relative overflow-hidden">
-      {/* Background image — swap src for volcanic mountain range photo */}
+      {/* Background — Mountain Range photo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/mountains.jpg)',
+          backgroundImage: "url('/images/Mountain%20Range.avif')",
           backgroundColor: '#1a1f2e',
         }}
         aria-hidden="true"
       />
 
-      {/* Overlay */}
+      {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, rgba(15,21,32,0.88) 0%, rgba(28,16,8,0.92) 100%)' }}
+        style={{ background: 'linear-gradient(105deg, rgba(15,21,32,0.94) 0%, rgba(15,21,32,0.88) 45%, rgba(15,21,32,0.55) 100%)' }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-20">
-          {/* Left */}
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch mb-20">
+
+          {/* Left — text */}
+          <div className="flex flex-col justify-center">
             <p
               className="text-xs tracking-[0.3em] uppercase mb-5 font-medium"
               style={{ color: 'rgba(245,240,232,0.5)' }}
@@ -53,29 +54,23 @@ export default function OriginStory() {
               <p>
                 We work with small family farms scattered across Guatemala's most storied growing regions — Chimaltenango, San Miguel Jilotepeque, Huehuetenango. Each family has worked the same land for generations. Each harvest is picked by hand.
               </p>
-              <p style={{ color: 'rgba(245,240,232,0.55)', fontFamily: 'var(--font-playfair)', fontStyle: 'italic' }}>
+              <p style={{ color: 'rgba(245,240,232,0.52)', fontFamily: 'var(--font-playfair)', fontStyle: 'italic' }}>
                 "No pesticides. No GMOs. No shortcuts. Just mother nature, mountain altitude, and families who never stopped caring about what ends up in your cup."
               </p>
             </div>
           </div>
 
-          {/* Right — decorative text element */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="text-center">
-              <p
-                className="text-[7rem] xl:text-[9rem] font-bold leading-none select-none"
-                style={{
-                  fontFamily: 'var(--font-playfair)',
-                  color: 'transparent',
-                  WebkitTextStroke: '1px rgba(245,240,232,0.15)',
-                }}
-              >
-                1983
-              </p>
-              <p className="text-xs tracking-[0.25em] uppercase mt-2" style={{ color: 'rgba(245,240,232,0.3)' }}>
-                The year it began
-              </p>
-            </div>
+          {/* Right — Farmer photo */}
+          <div className="hidden lg:block relative overflow-hidden" style={{ minHeight: '480px' }}>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/Farmer.avif')" }}
+            />
+            {/* Left-edge fade to blend with text column */}
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to right, rgba(15,21,32,0.65) 0%, rgba(15,21,32,0.1) 35%, transparent 60%)' }}
+            />
           </div>
         </div>
 

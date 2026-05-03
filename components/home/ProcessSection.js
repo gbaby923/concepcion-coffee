@@ -7,7 +7,7 @@ const steps = [
   {
     num: '02',
     title: 'Washed Process',
-    body: 'After picking, cherries are washed and the fruit removed — a process that produces a cleaner, brighter cup while preserving the bean\'s natural character and the region\'s distinct terroir.',
+    body: "After picking, cherries are washed and the fruit removed — a process that produces a cleaner, brighter cup while preserving the bean's natural character and the region's distinct terroir.",
   },
   {
     num: '03',
@@ -18,8 +18,26 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-24 lg:py-32" style={{ backgroundColor: '#FDFAF4' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="process" style={{ backgroundColor: '#FDFAF4' }}>
+
+      {/* Basket of red beans — full-width image */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: '44vh', maxHeight: '480px', minHeight: '260px' }}
+        aria-hidden="true"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/basket%20of%20red%20beans.avif')" }}
+        />
+        {/* Fade to warm-white at bottom */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, transparent 45%, #FDFAF4 100%)' }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
 
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16 lg:mb-20">
@@ -46,7 +64,7 @@ export default function ProcessSection() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="p-8 lg:p-10 group"
+              className="p-8 lg:p-10"
               style={{ backgroundColor: '#FDFAF4' }}
             >
               <p

@@ -13,9 +13,9 @@ export default function SubscriptionSection() {
   return (
     <section id="subscribe" className="py-24 lg:py-32" style={{ backgroundColor: '#F5F0E8' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left */}
+          {/* Left — copy */}
           <div>
             <p className="text-xs tracking-[0.3em] uppercase mb-5 font-medium" style={{ color: '#6B4C2A' }}>
               Subscription
@@ -54,70 +54,34 @@ export default function SubscriptionSection() {
             </Link>
           </div>
 
-          {/* Right — visual subscription card */}
-          <div>
+          {/* Right — pour over lifestyle photo */}
+          <div className="relative overflow-hidden" style={{ minHeight: '500px', aspectRatio: '4/5' }}>
             <div
-              className="p-8 lg:p-10 relative overflow-hidden"
-              style={{ backgroundColor: '#1C1008' }}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/pour%20over%20coffee.avif')" }}
+            />
+            {/* Subtle bottom vignette */}
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to top, rgba(28,16,8,0.18) 0%, transparent 50%)' }}
+            />
+            {/* Price tag overlay */}
+            <div
+              className="absolute bottom-6 left-6 right-6 p-5"
+              style={{ backgroundColor: 'rgba(28,16,8,0.82)', backdropFilter: 'blur(4px)' }}
             >
-              {/* Decorative year */}
-              <p
-                className="absolute top-4 right-6 text-7xl font-bold select-none leading-none"
-                style={{
-                  fontFamily: 'var(--font-playfair)',
-                  color: 'rgba(245,240,232,0.06)',
-                }}
-              >
-                1983
-              </p>
-
-              <p
-                className="text-xs tracking-[0.25em] uppercase mb-6 font-medium"
-                style={{ color: 'rgba(245,240,232,0.45)' }}
-              >
-                How it works
-              </p>
-
-              {[
-                { step: '1', label: 'Choose your region', sub: 'Chimaltenango, San Miguel, or Huehuetenango' },
-                { step: '2', label: 'Choose your grind', sub: 'Whole bean or ground' },
-                { step: '3', label: 'Choose your schedule', sub: 'Monthly delivery, skip or cancel anytime' },
-              ].map((item) => (
-                <div
-                  key={item.step}
-                  className="flex gap-5 mb-7 last:mb-0 pb-7 last:pb-0 border-b last:border-0"
-                  style={{ borderColor: 'rgba(245,240,232,0.08)' }}
-                >
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-                    style={{ backgroundColor: 'rgba(245,240,232,0.1)', color: '#F5F0E8' }}
-                  >
-                    {item.step}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm mb-1" style={{ color: '#F5F0E8', fontFamily: 'var(--font-playfair)' }}>
-                      {item.label}
-                    </p>
-                    <p className="text-xs" style={{ color: 'rgba(245,240,232,0.5)' }}>{item.sub}</p>
-                  </div>
-                </div>
-              ))}
-
-              <div
-                className="mt-8 pt-6 border-t flex items-center justify-between"
-                style={{ borderColor: 'rgba(245,240,232,0.08)' }}
-              >
+              <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-3xl font-bold" style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}>
+                  <p className="text-2xl font-bold" style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}>
                     From $12.75
                   </p>
-                  <p className="text-xs mt-1" style={{ color: 'rgba(245,240,232,0.4)' }}>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(245,240,232,0.5)' }}>
                     per delivery · 15% off retail
                   </p>
                 </div>
                 <Link
                   href="/#shop"
-                  className="px-6 py-3 text-xs font-bold tracking-[0.12em] uppercase hover:opacity-80 transition-opacity"
+                  className="px-5 py-2.5 text-xs font-bold tracking-[0.12em] uppercase hover:opacity-80 transition-opacity flex-shrink-0"
                   style={{ backgroundColor: '#F5F0E8', color: '#1C1008' }}
                 >
                   Subscribe
