@@ -4,7 +4,13 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const WORDS = ['QUALITY', 'TRUTH', 'ACCOUNTABILITY', 'LOVE']
+const WORDS = [
+  { text: 'QUALITY',     font: 'var(--font-bebas)',     weight: 400, italic: false, upper: true,  spacing: '0.12em' },
+  { text: 'SUSTAINABLE', font: 'var(--font-oswald)',    weight: 600, italic: false, upper: true,  spacing: '0.08em' },
+  { text: 'Familia',     font: 'var(--font-cormorant)', weight: 400, italic: true,  upper: false, spacing: '0.04em' },
+  { text: 'COSECHA',     font: 'var(--font-playfair)',  weight: 700, italic: false, upper: true,  spacing: '0.1em'  },
+  { text: 'Amor',        font: 'var(--font-cormorant)', weight: 300, italic: true,  upper: false, spacing: '0.06em' },
+]
 const WORD_MS = 900
 
 export default function Hero() {
@@ -67,18 +73,19 @@ export default function Hero() {
         <p
           key={wordIndex}
           style={{
-            fontFamily: 'var(--font-playfair)',
-            fontWeight: 900,
-            fontSize: 'clamp(2rem, 8vw, 5rem)',
+            fontFamily: WORDS[wordIndex].font,
+            fontWeight: WORDS[wordIndex].weight,
+            fontStyle: WORDS[wordIndex].italic ? 'italic' : 'normal',
+            fontSize: 'clamp(2.2rem, 8vw, 5.5rem)',
             color: '#F5F0E8',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
+            letterSpacing: WORDS[wordIndex].spacing,
+            textTransform: WORDS[wordIndex].upper ? 'uppercase' : 'none',
             whiteSpace: 'nowrap',
             lineHeight: 1,
             animation: `wordFlash ${WORD_MS}ms ease forwards`,
           }}
         >
-          {WORDS[wordIndex]}
+          {WORDS[wordIndex].text}
         </p>
       </div>
 
