@@ -10,20 +10,21 @@ const stats = [
 export default function OriginStory() {
   return (
     <section id="story" className="relative overflow-hidden">
-      {/* Background — Mountain Range photo */}
+      {/* Background — Farmer photo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/Mountain%20Range.avif')",
-          backgroundColor: '#1a1f2e',
+          backgroundImage: "url('/images/Farmer.avif')",
+          backgroundColor: '#1C1008',
+          backgroundPosition: 'center 20%',
         }}
         aria-hidden="true"
       />
 
-      {/* Dark overlay */}
+      {/* Directional overlay — dark on left for text, opens up on right to reveal farmer */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(105deg, rgba(15,21,32,0.94) 0%, rgba(15,21,32,0.88) 45%, rgba(15,21,32,0.55) 100%)' }}
+        style={{ background: 'linear-gradient(to right, rgba(12,7,3,0.95) 0%, rgba(12,7,3,0.90) 35%, rgba(12,7,3,0.55) 60%, rgba(12,7,3,0.2) 100%)' }}
         aria-hidden="true"
       />
 
@@ -60,18 +61,8 @@ export default function OriginStory() {
             </div>
           </div>
 
-          {/* Right — Farmer photo */}
-          <div className="hidden lg:block relative overflow-hidden" style={{ minHeight: '480px' }}>
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/Farmer.avif')" }}
-            />
-            {/* Left-edge fade to blend with text column */}
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(to right, rgba(15,21,32,0.65) 0%, rgba(15,21,32,0.1) 35%, transparent 60%)' }}
-            />
-          </div>
+          {/* Right — farmer visible through background */}
+          <div className="hidden lg:block" />
         </div>
 
         {/* Stats row */}
