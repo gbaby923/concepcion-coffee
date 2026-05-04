@@ -8,10 +8,17 @@ import { useCart } from '@/context/CartContext'
 
 const navLinks = [
   { label: 'Our Coffee', href: '/#coffee' },
-  { label: 'Regions', href: '/#regions' },
+  { 
+    label: 'Regions', 
+    dropdown: [
+      { label: 'Chimaltenango', href: '/regions/chimaltenango' },
+      { label: 'San Miguel Jilotepeque', href: '/regions/san-miguel-jilotepeque' },
+      { label: 'Huehuetenango', href: '/regions/huehuetenango' },
+    ]
+  },
   { label: 'Our Story', href: '/#story' },
   { label: 'Wholesale', href: '/#wholesale' },
-  { label: 'Shop', href: '/#shop' },
+  { label: 'Shop All', href: '/shop' },
 ]
 
 export default function Header() {
@@ -70,14 +77,39 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map(link => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="nav-link text-sm tracking-wide"
-                style={{ color: '#1C1008' }}
-              >
-                {link.label}
-              </Link>
+              <div key={link.label} className="relative group">
+                {link.dropdown ? (
+                  <>
+                    <button
+                      className="nav-link text-sm tracking-wide flex items-center gap-1"
+                      style={{ color: '#1C1008' }}
+                    >
+                      {link.label}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-[#F5F0E8] border shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-2" style={{ borderColor: '#E8E0D4' }}>
+                      {link.dropdown.map(sublink => (
+                        <Link
+                          key={sublink.label}
+                          href={sublink.href}
+                          className="px-5 py-3 text-xs tracking-wide hover:bg-[#E8E0D4] transition-colors"
+                          style={{ color: '#1C1008' }}
+                        >
+                          {sublink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="nav-link text-sm tracking-wide"
+                    style={{ color: '#1C1008' }}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -110,7 +142,7 @@ export default function Header() {
 
             {/* Order Now CTA */}
             <Link
-              href="/#shop"
+              href="/shop"
               className="hidden lg:inline-flex items-center px-5 py-2.5 text-xs font-bold tracking-[0.12em] uppercase hover:opacity-80 transition-opacity"
               style={{ backgroundColor: '#1C1008', color: '#F5F0E8' }}
             >
@@ -154,18 +186,40 @@ export default function Header() {
       >
         <nav className="px-6 py-4 flex flex-col gap-1">
           {navLinks.map(link => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium tracking-wide py-3 border-b"
-              onClick={() => setMenuOpen(false)}
-              style={{ color: '#1C1008', borderColor: '#E8E0D4' }}
-            >
-              {link.label}
-            </Link>
+            <div key={link.label}>
+              {link.dropdown ? (
+                <>
+                  <div className="text-sm font-medium tracking-wide py-3 border-b flex items-center justify-between" style={{ color: '#1C1008', borderColor: '#E8E0D4' }}>
+                    {link.label}
+                  </div>
+                  <div className="flex flex-col pl-4 border-b pb-2 pt-1" style={{ borderColor: '#E8E0D4' }}>
+                    {link.dropdown.map(sublink => (
+                      <Link
+                        key={sublink.label}
+                        href={sublink.href}
+                        className="py-2 text-xs tracking-wide opacity-80"
+                        onClick={() => setMenuOpen(false)}
+                        style={{ color: '#1C1008' }}
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="block text-sm font-medium tracking-wide py-3 border-b"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ color: '#1C1008', borderColor: '#E8E0D4' }}
+                >
+                  {link.label}
+                </Link>
+              )}
+            </div>
           ))}
           <Link
-            href="/#shop"
+            href="/shop"
             className="mt-3 py-3 text-center text-xs font-bold tracking-[0.15em] uppercase"
             style={{ backgroundColor: '#1C1008', color: '#F5F0E8' }}
             onClick={() => setMenuOpen(false)}

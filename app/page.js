@@ -1,4 +1,5 @@
 import Hero from '@/components/home/Hero'
+import RomanceBridge from '@/components/home/RomanceBridge'
 import WhyAltitude from '@/components/home/WhyAltitude'
 import OriginStory from '@/components/home/OriginStory'
 import RegionsTeaser from '@/components/home/RegionsTeaser'
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <RomanceBridge />
       <ProductSection />
       <RegionsTeaser />
       <WhyAltitude />

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const stats = [
   { value: 'Since 1983', label: 'Generational Farming' },
   { value: '1,785 m', label: 'Altitude (masnm)' },
@@ -58,6 +60,25 @@ export default function OriginStory() {
               <p style={{ color: 'rgba(245,240,232,0.52)', fontFamily: 'var(--font-playfair)', fontStyle: 'italic' }}>
                 "No pesticides. No GMOs. No shortcuts. Just mother nature, mountain altitude, and families who never stopped caring about what ends up in your cup."
               </p>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10">
+              <Link
+                href="/shop"
+                className="inline-flex items-center px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase border transition-all duration-300"
+                style={{ borderColor: 'rgba(245,240,232,0.45)', color: '#F5F0E8' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F5F0E8'
+                  e.currentTarget.style.color = '#1C1008'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = '#F5F0E8'
+                }}
+              >
+                Support the Farmers
+              </Link>
             </div>
           </div>
 
