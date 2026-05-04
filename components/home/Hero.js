@@ -5,11 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const WORDS = [
-  { text: 'QUALITY',     font: 'var(--font-bebas)',     weight: 400, italic: false, upper: true,  spacing: '0.12em' },
-  { text: 'SUSTAINABLE', font: 'var(--font-oswald)',    weight: 600, italic: false, upper: true,  spacing: '0.08em' },
-  { text: 'Familia',     font: 'var(--font-cormorant)', weight: 400, italic: true,  upper: false, spacing: '0.04em' },
-  { text: 'COSECHA',     font: 'var(--font-playfair)',  weight: 700, italic: false, upper: true,  spacing: '0.1em'  },
-  { text: 'Amor',        font: 'var(--font-cormorant)', weight: 300, italic: true,  upper: false, spacing: '0.06em' },
+  { text: 'QUALITY',     font: 'var(--font-changa)',        weight: 400, italic: false, upper: true,  spacing: '0.12em' },
+  { text: 'SUSTAINABLE', font: 'var(--font-arbutus)',       weight: 400, italic: false, upper: true,  spacing: '0.08em' },
+  { text: 'Familia',     font: 'var(--font-cinzel-dec)',    weight: 400, italic: false, upper: false, spacing: '0.04em' },
+  { text: 'COSECHA',     font: 'var(--font-saira-stencil)', weight: 400, italic: false, upper: true,  spacing: '0.1em'  },
+  { text: 'Amor',        font: 'var(--font-pinyon)',        weight: 400, italic: false, upper: false, spacing: '0.06em' },
+  { text: 'EST. 1983',   font: 'var(--font-playfair)',      weight: 600, italic: true,  upper: true,  spacing: '0.15em' },
 ]
 const WORD_MS = 900
 
