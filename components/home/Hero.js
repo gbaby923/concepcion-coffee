@@ -16,15 +16,8 @@ const WORD_MS = 900
 export default function Hero() {
   const [phase, setPhase] = useState('words') // 'words' | 'logo' | 'cta'
   const [wordIndex, setWordIndex] = useState(0)
-  const videoRef = useRef(null)
 
   useEffect(() => {
-    // Force muted property for strict iOS Safari autoplay rules
-    if (videoRef.current) {
-      videoRef.current.muted = true
-      videoRef.current.play().catch(() => {})
-    }
-
     const timers = []
 
     WORDS.forEach((_, i) => {
@@ -44,19 +37,25 @@ export default function Hero() {
       style={{ height: '100svh', minHeight: '600px' }}
       aria-label="Hero"
     >
-      {/* Video background */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden="true"
-      >
-        <source src="/images/Gutamalen%20HERO.mp4" type="video/mp4" />
-      </video>
+      {/* Video background - raw HTML injection is the 100% foolproof way to bypass iOS Safari's React autoplay block */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        dangerouslySetInnerHTML={{
+          __html: `
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              disablepictureinpicture
+              class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              style="pointer-events: none;"
+            >
+              <source src="/images/Gutamalen%20HERO.mp4" type="video/mp4" />
+            </video>
+          `,
+        }}
+      />
 
       {/* Overlay — darkens for words, eases to gradient for logo */}
       <div
