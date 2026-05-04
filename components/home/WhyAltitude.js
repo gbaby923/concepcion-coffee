@@ -123,16 +123,8 @@ export default function WhyAltitude() {
         <div className="mt-16 text-center">
           <Link
             href="/shop"
-            className="inline-flex items-center px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase border transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase border transition-all duration-300 hover:bg-[#1C1008] hover:text-[#F5F0E8]"
             style={{ borderColor: '#1C1008', color: '#1C1008' }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#1C1008'
-              e.currentTarget.style.color = '#F5F0E8'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent'
-              e.currentTarget.style.color = '#1C1008'
-            }}
           >
             Taste the Difference
           </Link>

@@ -66,16 +66,8 @@ export default function OriginStory() {
             <div className="mt-10">
               <Link
                 href="/shop"
-                className="inline-flex items-center px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase border transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase border transition-all duration-300 hover:bg-[#F5F0E8] hover:text-[#1C1008]"
                 style={{ borderColor: 'rgba(245,240,232,0.45)', color: '#F5F0E8' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F5F0E8'
-                  e.currentTarget.style.color = '#1C1008'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.style.color = '#F5F0E8'
-                }}
               >
                 Support the Farmers
               </Link>
