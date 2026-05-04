@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -16,8 +16,15 @@ const WORD_MS = 900
 export default function Hero() {
   const [phase, setPhase] = useState('words') // 'words' | 'logo' | 'cta'
   const [wordIndex, setWordIndex] = useState(0)
+  const videoRef = useRef(null)
 
   useEffect(() => {
+    // Force muted property for strict iOS Safari autoplay rules
+    if (videoRef.current) {
+      videoRef.current.muted = true
+      videoRef.current.play().catch(() => {})
+    }
+
     const timers = []
 
     WORDS.forEach((_, i) => {
@@ -39,10 +46,12 @@ export default function Hero() {
     >
       {/* Video background */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
+        disablePictureInPicture
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       >
