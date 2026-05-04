@@ -57,7 +57,7 @@ export default function RegionsTeaser() {
               aria-label={`Explore ${region.name} region`}
             >
               <div
-                className="relative overflow-hidden"
+                className="relative overflow-hidden transition-all duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:rounded-t-[9999px]"
                 style={{ aspectRatio: '3/4' }}
               >
                 {/* Background image */}
@@ -65,9 +65,6 @@ export default function RegionsTeaser() {
                   className="region-card-img absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${region.image})` }}
                 />
-
-                {/* Half-dome overlay — slides down from top on hover */}
-                <div className="region-half-dome" aria-hidden="true" />
 
                 {/* Bottom gradient */}
                 <div className="region-card-overlay absolute inset-0" />
