@@ -37,9 +37,9 @@ export default function Hero() {
       style={{ height: '100svh', minHeight: '600px' }}
       aria-label="Hero"
     >
-      {/* Video background - raw HTML injection is the 100% foolproof way to bypass iOS Safari's React autoplay block */}
+      {/* Desktop Video Background */}
       <div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full hidden md:block"
         dangerouslySetInnerHTML={{
           __html: `
             <video
@@ -56,6 +56,17 @@ export default function Hero() {
           `,
         }}
       />
+
+      {/* Mobile Static Background (Bypasses all iOS Safari video issues) */}
+      <div className="absolute inset-0 w-full h-full block md:hidden">
+        <Image
+          src="/images/Mountain Range.avif"
+          alt="Concepcion Coffee"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
 
       {/* Overlay — darkens for words, eases to gradient for logo */}
       <div
