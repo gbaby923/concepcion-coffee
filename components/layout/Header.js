@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
@@ -14,21 +15,26 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [visible, setVisible] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { count, setIsOpen } = useCart()
+  const pathname = usePathname()
+  
+  const isHome = pathname === '/'
+  const visible = !isHome || scrolled
 
   useEffect(() => {
+    if (!isHome) return
     const threshold = window.innerHeight * 0.82
 
     const onScroll = () => {
-      setVisible(window.scrollY > threshold)
+      setScrolled(window.scrollY > threshold)
       if (window.scrollY <= threshold) setMenuOpen(false)
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [isHome])
 
   return (
     <header

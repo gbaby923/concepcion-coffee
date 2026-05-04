@@ -43,7 +43,7 @@ const region = {
     flavorNotes: 'Dark chocolate · Brown sugar · Smooth, lingering finish',
     altitude: '1,700–1,900 masnm',
     regionNum: '01',
-    bagImage: '/images/bag-blue.jpg',
+    bagImage: '/images/bag-kraft.png',
   },
 }
 

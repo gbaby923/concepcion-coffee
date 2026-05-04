@@ -43,7 +43,7 @@ const region = {
     flavorNotes: 'Stone fruit · Dark caramel · Lingering, complex sweetness',
     altitude: '1,800–2,000 masnm',
     regionNum: '03',
-    bagImage: '/images/bag-black.jpg',
+    bagImage: '/images/bag-black.png',
   },
 }
 

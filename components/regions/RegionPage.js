@@ -78,6 +78,29 @@ export default function RegionPage({ region }) {
         </div>
       </div>
 
+      {/* The Product (Moved to top per user request) */}
+      <section className="py-20 lg:py-24" style={{ backgroundColor: '#F5F0E8' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#6B4C2A' }}>
+              Order
+            </p>
+            <h2
+              className="text-3xl lg:text-4xl font-semibold mb-4"
+              style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
+            >
+              {name} — Dark Roast
+            </h2>
+            <p className="text-base" style={{ color: '#5a4030' }}>
+              Organically grown · Dark roast · Family farmed
+            </p>
+          </div>
+          <div className="max-w-sm mx-auto">
+            <ProductCard {...product} />
+          </div>
+        </div>
+      </section>
+
       {/* The Land */}
       <section className="py-20 lg:py-24" style={{ backgroundColor: '#F5F0E8' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -214,28 +237,7 @@ export default function RegionPage({ region }) {
         </div>
       </section>
 
-      {/* The Product */}
-      <section className="py-20 lg:py-24" style={{ backgroundColor: '#F5F0E8' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#6B4C2A' }}>
-              Order
-            </p>
-            <h2
-              className="text-3xl lg:text-4xl font-semibold mb-4"
-              style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
-            >
-              {name} — Dark Roast
-            </h2>
-            <p className="text-base" style={{ color: '#5a4030' }}>
-              Organically grown · Dark roast · Family farmed
-            </p>
-          </div>
-          <div className="max-w-sm mx-auto">
-            <ProductCard {...product} />
-          </div>
-        </div>
-      </section>
+
 
       {/* Explore other regions */}
       <section className="py-16" style={{ backgroundColor: '#FDFAF4', borderTop: '1px solid #E8E0D4' }}>
