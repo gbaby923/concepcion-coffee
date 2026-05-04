@@ -79,8 +79,8 @@ export default function RegionsTeaser() {
                       Region {region.num}
                     </p>
                     <h3
-                      className="text-4xl lg:text-5xl font-black tracking-wider uppercase mb-5"
-                      style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8', textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}
+                      className="text-3xl md:text-xl lg:text-2xl xl:text-3xl font-black tracking-widest uppercase mb-4 w-full px-4"
+                      style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8', textShadow: '0 4px 20px rgba(0,0,0,0.4)', wordWrap: 'break-word' }}
                     >
                       {region.name}
                     </h3>
