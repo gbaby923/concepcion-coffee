@@ -1,18 +1,20 @@
+import Image from 'next/image'
+
 const steps = [
   {
-    num: '01',
-    title: 'Harvest',
-    body: 'Every cherry is picked by hand at peak ripeness. No machines. No shortcuts. Just experienced hands that know the difference between a ripe cherry and one that needs another week.',
+    icon: '/images/picking icon.png',
+    title: 'Hand Picked',
+    body: 'Every cherry is harvested by hand at peak ripeness. No machines. No shortcuts. Just experienced hands that know the exact moment a cherry is ready to be pulled from the branch.',
   },
   {
-    num: '02',
-    title: 'Washed Process',
-    body: "After picking, cherries are washed and the fruit removed — a process that produces a cleaner, brighter cup while preserving the bean's natural character and the region's distinct terroir.",
+    icon: '/images/sun dry.png',
+    title: 'Sun Dried',
+    body: 'After washing, beans are laid out on raised patios under the Guatemalan sun. Slow, traditional drying builds the dense, complex sweetness that defines our roast.',
   },
   {
-    num: '03',
-    title: 'Patio Dried',
-    body: 'Beans are laid out on raised patios under the Guatemalan sun. Slow. Traditional. The way it has been done on these farms since 1983 — because patience in processing pays off in every cup.',
+    icon: '/images/transport icon.png',
+    title: 'Direct Transport',
+    body: 'From the highland mills straight down the mountain. Direct trade ensures complete traceability and preserves the integrity of the beans from the family farm to our roaster.',
   },
 ]
 
@@ -20,27 +22,17 @@ export default function ProcessSection() {
   return (
     <section id="process" style={{ backgroundColor: '#FDFAF4' }}>
 
-      {/* Basket of red beans — full-width image */}
+      {/* Seamless transition from the dark OriginStory section */}
       <div
-        className="relative w-full overflow-hidden"
-        style={{ height: '44vh', maxHeight: '480px', minHeight: '260px' }}
+        className="w-full h-32 lg:h-48"
+        style={{ background: 'linear-gradient(to bottom, #1C1008 0%, #FDFAF4 100%)' }}
         aria-hidden="true"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/basket%20of%20red%20beans.avif')" }}
-        />
-        {/* Fade to warm-white at bottom */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, transparent 45%, #FDFAF4 100%)' }}
-        />
-      </div>
+      />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32 pt-8 lg:pt-12">
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16 lg:mb-24">
           <div>
             <p className="text-xs tracking-[0.3em] uppercase mb-4 font-medium" style={{ color: '#6B4C2A' }}>
               How It's Made
@@ -49,9 +41,9 @@ export default function ProcessSection() {
               className="text-4xl lg:text-5xl font-semibold leading-tight"
               style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
             >
-              Washed.
-              <br />Patio Dried.
-              <br />Dark Roasted.
+              Picked.
+              <br />Sun Dried.
+              <br />Delivered.
             </h2>
           </div>
           <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#5a4030' }}>
@@ -63,20 +55,21 @@ export default function ProcessSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: '#E8E0D4' }}>
           {steps.map((step) => (
             <div
-              key={step.num}
-              className="p-8 lg:p-10"
+              key={step.title}
+              className="p-8 lg:p-12 flex flex-col items-center text-center group"
               style={{ backgroundColor: '#FDFAF4' }}
             >
-              <p
-                className="text-5xl lg:text-6xl font-bold leading-none mb-6 select-none"
-                style={{
-                  fontFamily: 'var(--font-playfair)',
-                  color: 'transparent',
-                  WebkitTextStroke: '1px rgba(28,16,8,0.15)',
-                }}
-              >
-                {step.num}
-              </p>
+              {/* Icon with multiply blend mode to seamlessly remove any white background */}
+              <div className="relative w-32 h-32 lg:w-40 lg:h-40 mb-8 transition-transform duration-500 group-hover:scale-105">
+                <Image
+                  src={step.icon}
+                  alt={step.title}
+                  fill
+                  className="object-contain"
+                  style={{ mixBlendMode: 'multiply', opacity: 0.85 }}
+                />
+              </div>
+              
               <h3
                 className="text-xl font-semibold mb-4"
                 style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
