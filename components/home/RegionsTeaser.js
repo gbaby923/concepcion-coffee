@@ -57,7 +57,7 @@ export default function RegionsTeaser() {
               aria-label={`Explore ${region.name} region`}
             >
               <div
-                className="relative overflow-hidden transition-all duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:rounded-t-[9999px]"
+                className="relative overflow-hidden transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:rounded-t-[250px]"
                 style={{ aspectRatio: '3/4' }}
               >
                 {/* Background image */}
@@ -66,43 +66,43 @@ export default function RegionsTeaser() {
                   style={{ backgroundImage: `url(${region.image})` }}
                 />
 
-                {/* Bottom gradient */}
-                <div className="region-card-overlay absolute inset-0" />
+                {/* Bottom gradient overlay, we can make it a full overlay so the text pops */}
+                <div className="region-card-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-700" />
 
                 {/* Card content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <div className="region-card-info">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
+                  <div className="region-card-info flex flex-col items-center">
                     <p
-                      className="text-[10px] tracking-[0.3em] uppercase mb-2"
-                      style={{ color: 'rgba(245,240,232,0.55)' }}
+                      className="text-[10px] tracking-[0.3em] uppercase mb-4"
+                      style={{ color: 'rgba(245,240,232,0.75)' }}
                     >
                       Region {region.num}
                     </p>
                     <h3
-                      className="text-2xl font-semibold leading-tight mb-3"
-                      style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}
+                      className="text-4xl lg:text-5xl font-black tracking-wider uppercase mb-5"
+                      style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8', textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}
                     >
                       {region.name}
                     </h3>
-                    <p className="text-xs mb-1" style={{ color: 'rgba(245,240,232,0.6)' }}>
+                    <p className="text-sm tracking-widest font-medium mb-3" style={{ color: 'rgba(245,240,232,0.9)' }}>
                       {region.altitude}
                     </p>
                     <p
-                      className="text-sm italic"
-                      style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(245,240,232,0.75)' }}
+                      className="text-base italic font-light max-w-[220px]"
+                      style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(245,240,232,0.85)' }}
                     >
                       {region.flavor}
                     </p>
                   </div>
 
                   {/* CTA — slides up on hover */}
-                  <div className="region-card-cta mt-5">
+                  <div className="region-card-cta mt-8">
                     <span
-                      className="inline-flex items-center gap-3 px-5 py-2.5 text-xs font-bold tracking-[0.15em] uppercase"
+                      className="inline-flex items-center gap-3 px-6 py-3 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white hover:text-black"
                       style={{ border: '1px solid rgba(245,240,232,0.55)', color: '#F5F0E8' }}
                     >
-                      Explore Region
-                      <span style={{ fontSize: '0.75rem' }}>→</span>
+                      View Coffees
+                      <span style={{ fontSize: '0.85rem' }}>→</span>
                     </span>
                   </div>
                 </div>
