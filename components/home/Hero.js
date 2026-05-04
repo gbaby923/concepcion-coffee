@@ -38,24 +38,18 @@ export default function Hero() {
       aria-label="Hero"
     >
       {/* Desktop Video Background */}
-      <div
-        className="absolute inset-0 w-full h-full hidden md:block"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <video
-              autoplay
-              loop
-              muted
-              playsinline
-              disablepictureinpicture
-              class="absolute inset-0 w-full h-full object-cover pointer-events-none"
-              style="pointer-events: none;"
-            >
-              <source src="/images/Gutamalen%20HERO.mp4" type="video/mp4" />
-            </video>
-          `,
-        }}
-      />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        aria-hidden="true"
+        style={{ pointerEvents: 'none' }}
+      >
+        <source src="/images/Gutamalen%20HERO.mp4" type="video/mp4" />
+      </video>
 
       {/* Mobile Static Background (Bypasses all iOS Safari video issues) */}
       <div className="absolute inset-0 w-full h-full block md:hidden">
