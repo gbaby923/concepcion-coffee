@@ -22,6 +22,8 @@ const region = {
     "Harvest here is a family affair. Children grow up watching their parents and grandparents move through the rows, selecting only the ripest cherries by hand. The knowledge passes down not through instruction but through seasons — each one a lesson in patience, attention, and respect for what the land provides.",
   ],
 
+  familyImage: '/images/women guata.avif',
+
   tastingNotes: 'Dark chocolate · Brown sugar · Smooth, lingering finish',
 
   flavorBars: [

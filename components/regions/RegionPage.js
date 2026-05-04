@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ProductCard from '@/components/shared/ProductCard'
 
 function FlavorBar({ label, value, max = 5 }) {
@@ -26,6 +27,7 @@ export default function RegionPage({ region }) {
     heroImage,
     land,
     culture,
+    familyImage,
     flavorProfile,
     tastingNotes,
     flavorBars,
@@ -135,21 +137,36 @@ export default function RegionPage({ region }) {
       {/* The Culture */}
       <section className="py-20 lg:py-24" style={{ backgroundColor: '#FDFAF4' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#6B4C2A' }}>
-              The Culture
-            </p>
-            <h2
-              className="text-3xl lg:text-4xl font-semibold mb-8 leading-snug"
-              style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
-            >
-              The Families Behind It
-            </h2>
-            <div className="space-y-5 text-base lg:text-lg leading-relaxed" style={{ color: '#5a4030' }}>
-              {culture.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Text on left */}
+            <div>
+              <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#6B4C2A' }}>
+                The Culture
+              </p>
+              <h2
+                className="text-3xl lg:text-4xl font-semibold mb-8 leading-snug"
+                style={{ fontFamily: 'var(--font-playfair)', color: '#1C1008' }}
+              >
+                The Families Behind It
+              </h2>
+              <div className="space-y-5 text-base lg:text-lg leading-relaxed" style={{ color: '#5a4030' }}>
+                {culture.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </div>
+
+            {/* Image on right */}
+            {familyImage && (
+              <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <Image
+                  src={familyImage}
+                  alt={`Farmers from ${name}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>

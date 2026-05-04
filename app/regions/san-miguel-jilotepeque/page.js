@@ -22,6 +22,8 @@ const region = {
     "These are farmers who have chosen to stay — who could have moved to the city but instead invested another generation into these slopes. Every bag from San Miguel carries that decision. The commitment to do it the slow way, the right way, because the coffee and the community both deserve it.",
   ],
 
+  familyImage: '/images/man guata.avif',
+
   tastingNotes: 'Molasses · Toasted walnut · Bold, full body',
 
   flavorBars: [

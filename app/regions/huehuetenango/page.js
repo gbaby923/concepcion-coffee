@@ -22,6 +22,8 @@ const region = {
     "The farms here are small. The families are tight-knit. The harvest is slow and deliberate. There are no large estates in Huehuetenango — only families working their own land, their own way, in one of the most beautiful and challenging environments in the coffee-growing world.",
   ],
 
+  familyImage: '/images/women guata 2.jpg',
+
   tastingNotes: 'Stone fruit · Dark caramel · Lingering, complex sweetness',
 
   flavorBars: [
