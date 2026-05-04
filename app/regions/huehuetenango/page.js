@@ -38,13 +38,29 @@ const region = {
     { label: 'Finish', value: 'Long, complex, and sweet' },
   ],
 
-  product: {
-    region: 'Huehuetenango',
-    flavorNotes: 'Stone fruit · Dark caramel · Lingering, complex sweetness',
-    altitude: '1,800–2,000 masnm',
-    regionNum: '03',
-    bagImage: '/images/bag-black.png',
-  },
+  products: [
+    {
+      region: 'Huehuetenango Dark Roast',
+      flavorNotes: 'Stone fruit · Dark caramel · Lingering, complex sweetness',
+      altitude: '1,800–2,000 masnm',
+      regionNum: '03',
+      bagImage: '/images/bag-black.png',
+    },
+    {
+      region: 'Huehuetenango Medium Roast',
+      flavorNotes: 'Cherry · Nougat · Bright',
+      altitude: '1,800–2,000 masnm',
+      regionNum: '03',
+      bagImage: '/images/bag-red.jpg',
+    },
+    {
+      region: 'Huehuetenango Light Roast',
+      flavorNotes: 'Floral · Peach · Clean finish',
+      altitude: '1,800–2,000 masnm',
+      regionNum: '03',
+      bagImage: '/images/bag-kraft.png',
+    }
+  ],
 }
 
 export default function HuehuetenangPage() {

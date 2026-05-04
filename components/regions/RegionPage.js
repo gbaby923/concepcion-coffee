@@ -29,7 +29,7 @@ export default function RegionPage({ region }) {
     flavorProfile,
     tastingNotes,
     flavorBars,
-    product,
+    products,
   } = region
 
   return (
@@ -95,8 +95,10 @@ export default function RegionPage({ region }) {
               Organically grown · Dark roast · Family farmed
             </p>
           </div>
-          <div className="max-w-sm mx-auto">
-            <ProductCard {...product} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mx-auto">
+            {products?.map((prod, i) => (
+              <ProductCard key={i} {...prod} />
+            ))}
           </div>
         </div>
       </section>

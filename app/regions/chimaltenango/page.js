@@ -38,13 +38,29 @@ const region = {
     { label: 'Finish', value: 'Long and smooth' },
   ],
 
-  product: {
-    region: 'Chimaltenango',
-    flavorNotes: 'Dark chocolate · Brown sugar · Smooth, lingering finish',
-    altitude: '1,700–1,900 masnm',
-    regionNum: '01',
-    bagImage: '/images/bag-kraft.png',
-  },
+  products: [
+    {
+      region: 'Chimaltenango Dark Roast',
+      flavorNotes: 'Dark chocolate · Brown sugar · Smooth, lingering finish',
+      altitude: '1,700–1,900 masnm',
+      regionNum: '01',
+      bagImage: '/images/bag-kraft.png',
+    },
+    {
+      region: 'Chimaltenango Medium Roast',
+      flavorNotes: 'Milk chocolate · Caramel · Balanced',
+      altitude: '1,700–1,900 masnm',
+      regionNum: '01',
+      bagImage: '/images/bag-red.jpg',
+    },
+    {
+      region: 'Chimaltenango Espresso Blend',
+      flavorNotes: 'Cocoa nibs · Molasses · Heavy body',
+      altitude: '1,700–1,900 masnm',
+      regionNum: '01',
+      bagImage: '/images/bag-black.png',
+    }
+  ],
 }
 
 export default function ChimaltenangoPage() {

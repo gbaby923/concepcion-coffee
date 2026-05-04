@@ -38,13 +38,29 @@ const region = {
     { label: 'Finish', value: 'Bold and warming' },
   ],
 
-  product: {
-    region: 'San Miguel Jilotepeque',
-    flavorNotes: 'Molasses · Toasted walnut · Bold, full body',
-    altitude: '1,600–1,800 masnm',
-    regionNum: '02',
-    bagImage: '/images/bag-red.jpg',
-  },
+  products: [
+    {
+      region: 'San Miguel Jilotepeque Classic',
+      flavorNotes: 'Molasses · Toasted walnut · Bold, full body',
+      altitude: '1,600–1,800 masnm',
+      regionNum: '02',
+      bagImage: '/images/bag-red.jpg',
+    },
+    {
+      region: 'San Miguel Jilotepeque Bold',
+      flavorNotes: 'Dark cocoa · Black cherry · Smoky finish',
+      altitude: '1,600–1,800 masnm',
+      regionNum: '02',
+      bagImage: '/images/bag-black.png',
+    },
+    {
+      region: 'San Miguel Jilotepeque Reserve',
+      flavorNotes: 'Vanilla bean · Baking spices · Smooth',
+      altitude: '1,600–1,800 masnm',
+      regionNum: '02',
+      bagImage: '/images/bag-kraft.png',
+    }
+  ],
 }
 
 export default function SanMiguelPage() {

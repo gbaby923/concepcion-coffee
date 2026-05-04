@@ -7,7 +7,7 @@ const products = [
     flavorNotes: 'Dark chocolate · Brown sugar · Smooth, lingering finish',
     altitude: '1,700–1,900 masnm',
     regionNum: '01',
-    bagImage: '/images/bag-blue.jpg',
+    bagImage: '/images/bag-kraft.png',
   },
   {
     region: 'San Miguel Jilotepeque',
@@ -21,7 +21,7 @@ const products = [
     flavorNotes: 'Stone fruit · Dark caramel · Lingering, complex sweetness',
     altitude: '1,800–2,000 masnm',
     regionNum: '03',
-    bagImage: '/images/bag-black.jpg',
+    bagImage: '/images/bag-black.png',
   },
 ]
 
