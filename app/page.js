@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ProductSection />
       <RegionsTeaser />
       <WhyAltitude />
       <OriginStory />
-      <ProductSection />
       <ProcessSection />
       <SubscriptionSection />
       <WholesaleSection />
