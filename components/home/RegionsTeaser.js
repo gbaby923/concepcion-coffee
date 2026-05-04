@@ -7,8 +7,7 @@ const regions = [
     altitude: '1,700 – 1,900 masnm',
     flavor: 'Dark chocolate · Brown sugar · Smooth finish',
     href: '/regions/chimaltenango',
-    bgColor: '#1a2e1a',
-    image: '/images/region-chimaltenango.jpg',
+    image: '/images/Chimaltenango.png',
   },
   {
     num: '02',
@@ -16,8 +15,7 @@ const regions = [
     altitude: '1,600 – 1,800 masnm',
     flavor: 'Molasses · Toasted walnut · Bold body',
     href: '/regions/san-miguel-jilotepeque',
-    bgColor: '#2d1a0a',
-    image: '/images/region-san-miguel.jpg',
+    image: '/images/San%20Miguel%20Jilotepeque.png',
   },
   {
     num: '03',
@@ -25,8 +23,7 @@ const regions = [
     altitude: '1,800 – 2,000 masnm',
     flavor: 'Stone fruit · Dark caramel · Lingering sweetness',
     href: '/regions/huehuetenango',
-    bgColor: '#0f1929',
-    image: '/images/region-huehuetenango.jpg',
+    image: '/images/Huehuetenango.png',
   },
 ]
 
@@ -61,21 +58,21 @@ export default function RegionsTeaser() {
             >
               <div
                 className="relative overflow-hidden"
-                style={{ aspectRatio: '3/4', backgroundColor: region.bgColor }}
+                style={{ aspectRatio: '3/4' }}
               >
                 {/* Background image */}
                 <div
                   className="region-card-img absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${region.image})`,
-                    backgroundColor: region.bgColor,
-                  }}
+                  style={{ backgroundImage: `url(${region.image})` }}
                 />
 
-                {/* Gradient overlay — darkens more on hover via CSS */}
+                {/* Half-dome overlay — slides down from top on hover */}
+                <div className="region-half-dome" aria-hidden="true" />
+
+                {/* Bottom gradient */}
                 <div className="region-card-overlay absolute inset-0" />
 
-                {/* Content */}
+                {/* Card content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
                   <div className="region-card-info">
                     <p
