@@ -34,39 +34,8 @@ export default function RegionPage({ region }) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})`, backgroundColor: heroBg }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to top, rgba(28,16,8,0.95) 0%, rgba(28,16,8,0.4) 50%, rgba(28,16,8,0.15) 100%)' }}
-          aria-hidden="true"
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-20 w-full">
-          <p
-            className="text-xs tracking-[0.3em] uppercase mb-3"
-            style={{ color: 'rgba(245,240,232,0.5)' }}
-          >
-            Region {num}
-          </p>
-          <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4"
-            style={{ fontFamily: 'var(--font-playfair)', color: '#F5F0E8' }}
-          >
-            {name}
-          </h1>
-          <p className="text-sm lg:text-base" style={{ color: 'rgba(245,240,232,0.6)' }}>
-            {altitude} &nbsp;·&nbsp; Dark Roast &nbsp;·&nbsp; Organically Grown
-          </p>
-        </div>
-      </section>
-
       {/* Breadcrumb */}
-      <div style={{ backgroundColor: '#F5F0E8', borderBottom: '1px solid #E8E0D4' }}>
+      <div className="pt-20 lg:pt-24" style={{ backgroundColor: '#F5F0E8', borderBottom: '1px solid #E8E0D4' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <nav className="flex items-center gap-2 text-xs" style={{ color: '#6B4C2A' }} aria-label="Breadcrumb">
             <Link href="/" className="hover:opacity-70 transition-opacity">Home</Link>
