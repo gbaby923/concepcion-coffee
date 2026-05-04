@@ -1,35 +1,31 @@
-import { Fraunces, DM_Sans, Bebas_Neue, Cormorant_Garamond, Oswald } from 'next/font/google'
+import { Bodoni_Moda, Manrope, Bebas_Neue, Oswald } from 'next/font/google'
 import { CartProvider } from '@/context/CartContext'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/layout/CartDrawer'
 import './globals.css'
 
-const fraunces = Fraunces({
+// High-end editorial serif (replaces Playfair)
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
+  // Bodoni Moda is a variable font that supports weights 400-900 and italic/normal
+  style: ['normal', 'italic'],
 })
 
-const dmSans = DM_Sans({
+// Premium architectural sans-serif (replaces Inter/DM Sans)
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  // Manrope is a variable font supporting 200-800
 })
 
 const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   variable: '--font-bebas',
   weight: '400',
-  display: 'swap',
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  variable: '--font-cormorant',
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
   display: 'swap',
 })
 
@@ -53,7 +49,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${bebasNeue.variable} ${cormorant.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${bodoni.variable} ${manrope.variable} ${bebasNeue.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5F0E8' }}>
         <CartProvider>
           <Header />
