@@ -132,25 +132,31 @@ export default function Hero() {
             Concepcion Coffee
           </h1>
 
+          {/* CTAs — fade in on 'cta' phase */}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-9"
+            style={{
+              opacity: phase === 'cta' ? 1 : 0,
+              transform: phase === 'cta' ? 'translateY(0)' : 'translateY(10px)',
+              transition: 'opacity 0.6s ease, transform 0.6s ease',
+            }}
+          >
+            <Link
+              href="/shop"
+              className="inline-flex items-center justify-center px-9 py-3.5 text-xs font-bold tracking-[0.18em] uppercase transition-opacity hover:opacity-85 w-full sm:w-auto shadow-xl"
+              style={{ backgroundColor: '#F5F0E8', color: '#1C1008' }}
+            >
+              Shop Coffee
+            </Link>
+            <Link
+              href="/#story"
+              className="inline-flex items-center justify-center px-9 py-3.5 text-xs font-bold tracking-[0.18em] uppercase border transition-colors hover:bg-white/10 w-full sm:w-auto backdrop-blur-sm"
+              style={{ borderColor: 'rgba(245,240,232,0.45)', color: '#F5F0E8' }}
+            >
+              Our Story
+            </Link>
+          </div>
         </div>
-      </div>
-
-      {/* Permanent CTAs layer - appears instantly */}
-      <div className="absolute inset-x-0 bottom-24 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 z-20">
-        <Link
-          href="/shop"
-          className="inline-flex items-center justify-center px-9 py-3.5 text-xs font-bold tracking-[0.18em] uppercase transition-opacity hover:opacity-85 w-full sm:w-auto shadow-xl"
-          style={{ backgroundColor: '#F5F0E8', color: '#1C1008' }}
-        >
-          Shop Coffee
-        </Link>
-        <Link
-          href="/#story"
-          className="inline-flex items-center justify-center px-9 py-3.5 text-xs font-bold tracking-[0.18em] uppercase border transition-colors hover:bg-white/10 w-full sm:w-auto backdrop-blur-sm"
-          style={{ borderColor: 'rgba(245,240,232,0.45)', color: '#F5F0E8' }}
-        >
-          Our Story
-        </Link>
       </div>
 
       {/* Scroll indicator */}
