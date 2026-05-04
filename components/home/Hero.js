@@ -12,7 +12,7 @@ const WORDS = [
   { text: 'Amor',        font: 'var(--font-pinyon)',        weight: 400, italic: false, upper: false, spacing: '0.06em' },
   { text: 'EST. 1983',   font: 'var(--font-playfair)',      weight: 600, italic: true,  upper: true,  spacing: '0.15em' },
 ]
-const WORD_MS = 900
+const WORD_MS = 600
 
 export default function Hero() {
   const [phase, setPhase] = useState('words') // 'words' | 'logo' | 'cta'
